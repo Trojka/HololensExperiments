@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneExperiments", "SceneExperiments.csproj", "{8FFBA36C-0AFD-0B15-225C-594914183283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneExperiments.Editor", "SceneExperiments.Editor.csproj", "{002DEE5D-0189-BF5C-9D27-3EA45A5EC241}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FFBA36C-0AFD-0B15-225C-594914183283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFBA36C-0AFD-0B15-225C-594914183283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFBA36C-0AFD-0B15-225C-594914183283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFBA36C-0AFD-0B15-225C-594914183283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{002DEE5D-0189-BF5C-9D27-3EA45A5EC241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{002DEE5D-0189-BF5C-9D27-3EA45A5EC241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{002DEE5D-0189-BF5C-9D27-3EA45A5EC241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{002DEE5D-0189-BF5C-9D27-3EA45A5EC241}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
