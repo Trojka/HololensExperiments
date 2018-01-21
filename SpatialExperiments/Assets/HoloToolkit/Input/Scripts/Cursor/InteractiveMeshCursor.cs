@@ -19,7 +19,7 @@ namespace HoloToolkit.Unity.InputModule
         [Tooltip("Point light")]
         public GameObject Light;
 
-        [Tooltip("The scale factor to soften the distance scaling, we want the cursor to scale in the distance, but not disapprear.")]
+        [Tooltip("The scale factor to soften the distance scaling, we want the cursor to scale in the distance, but not disappear.")]
         public float DistanceScaleFactor = 0.3f;
 
         [Tooltip("The scale both elements will be at their default state")]
@@ -147,9 +147,9 @@ namespace HoloToolkit.Unity.InputModule
         /// override the base class for custom visibility
         /// </summary>
         /// <param name="visible"></param>
-        public override void SetVisiblity(bool visible)
+        public override void SetVisibility(bool visible)
         {
-            base.SetVisiblity(visible);
+            base.SetVisibility(visible);
 
             mIsVisible = visible;
             ElementVisibility(visible);
