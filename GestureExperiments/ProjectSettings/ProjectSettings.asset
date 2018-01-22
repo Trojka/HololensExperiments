@@ -558,11 +558,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: GestureExperiments
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: C:\Users\serge\Documents\GitHub\HololensExperiments\GestureExperiments\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00f0b732bfb2d401
   metroApplicationDescription: GestureExperiments
   wsaImages: {}
   metroTileShortName: 
