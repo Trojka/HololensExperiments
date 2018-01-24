@@ -4,7 +4,7 @@ using UnityEngine;
 using HoloToolkit.Unity;
 using HoloToolkit.Unity.SpatialMapping;
 
-public class MappingApplication : MonoBehaviour {
+public class PlaneFindingApplication : MonoBehaviour {
 
     private enum ApplicationState
     {
@@ -23,13 +23,16 @@ public class MappingApplication : MonoBehaviour {
     public GameObject cursor;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         _applicationState = ApplicationState.Scanning;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if(_applicationState == ApplicationState.Scanning) {
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_applicationState == ApplicationState.Scanning)
+        {
             if ((Time.time - SpatialMappingManager.Instance.StartTime) < ScanningDuration)
             {
                 Debug.Log("Keep scanning the room");
@@ -42,13 +45,13 @@ public class MappingApplication : MonoBehaviour {
             }
         }
 
-        if(_applicationState == ApplicationState.ScanningEnded)
+        if (_applicationState == ApplicationState.ScanningEnded)
         {
             cursor.SetActive(true);
             _applicationState = ApplicationState.Placement;
         }
 
-        if(_applicationState == ApplicationState.Placement)
+        if (_applicationState == ApplicationState.Placement)
         {
             Ray ray = new Ray(CameraCache.Main.transform.position, CameraCache.Main.transform.forward);
             int layerMask = ~(1 << CursorLayer);
