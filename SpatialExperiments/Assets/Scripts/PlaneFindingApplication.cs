@@ -11,7 +11,8 @@ public class PlaneFindingApplication : MonoBehaviour {
         None,
         Scanning,
         ScanningEnded,
-        Placement
+        MakePlanes,
+        MakingPlanes
     }
 
     const float ScanningDuration = 20f;
@@ -19,7 +20,7 @@ public class PlaneFindingApplication : MonoBehaviour {
     const int CursorLayer = 10;
     ApplicationState _applicationState = ApplicationState.None;
 
-    public Camera camera;
+    //public Camera camera;
     public GameObject cursor;
 
     // Use this for initialization
@@ -40,37 +41,47 @@ public class PlaneFindingApplication : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Scanning complete. Start placement");
+                Debug.Log("Scanning complete. End scanning");
                 _applicationState = ApplicationState.ScanningEnded;
             }
         }
 
         if (_applicationState == ApplicationState.ScanningEnded)
         {
+            Debug.Log("Scanning complete. Start placement");
             cursor.SetActive(true);
-            _applicationState = ApplicationState.Placement;
+            SpatialMappingManager.Instance.StopObserver();
+            SpatialMappingManager.Instance.DrawVisualMeshes = false;
+            _applicationState = ApplicationState.MakePlanes;
         }
 
-        if (_applicationState == ApplicationState.Placement)
+        if (_applicationState == ApplicationState.MakePlanes)
         {
-            Ray ray = new Ray(CameraCache.Main.transform.position, CameraCache.Main.transform.forward);
-            int layerMask = ~(1 << CursorLayer);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(
-                ray,
-                out hitInfo,
-                MaxHitInfoDistance,
-                layerMask
-                ))
+            SurfaceMeshesToPlanes surfaceToPlanes = SurfaceMeshesToPlanes.Instance;
+            if (surfaceToPlanes != null && surfaceToPlanes.enabled)
             {
-                Debug.Log("Placement. Something was hit");
-                cursor.transform.position = hitInfo.point;
-                cursor.transform.up = hitInfo.normal;
+                surfaceToPlanes.MakePlanes();
+                _applicationState = ApplicationState.MakingPlanes;
             }
-            else
-            {
-                Debug.Log("Placement. Nothing was hit");
-            }
+
+            //Ray ray = new Ray(CameraCache.Main.transform.position, CameraCache.Main.transform.forward);
+            //int layerMask = ~(1 << CursorLayer);
+            //RaycastHit hitInfo;
+            //if (Physics.Raycast(
+            //    ray,
+            //    out hitInfo,
+            //    MaxHitInfoDistance,
+            //    layerMask
+            //    ))
+            //{
+            //    Debug.Log("Placement. Something was hit");
+            //    cursor.transform.position = hitInfo.point;
+            //    cursor.transform.up = hitInfo.normal;
+            //}
+            //else
+            //{
+            //    Debug.Log("Placement. Nothing was hit");
+            //}
 
         }
     }

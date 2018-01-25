@@ -19,17 +19,20 @@ public class MappingApplication : MonoBehaviour {
     const int CursorLayer = 10;
     ApplicationState _applicationState = ApplicationState.None;
 
-    public Camera camera;
+    //public Camera camera;
     public GameObject cursor;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         _applicationState = ApplicationState.Scanning;
     }
 	
 	// Update is called once per frame
-	void Update () {
-		if(_applicationState == ApplicationState.Scanning) {
+	void Update ()
+    {
+		if(_applicationState == ApplicationState.Scanning)
+        {
             if ((Time.time - SpatialMappingManager.Instance.StartTime) < ScanningDuration)
             {
                 Debug.Log("Keep scanning the room");
@@ -37,13 +40,14 @@ public class MappingApplication : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Scanning complete. Start placement");
+                Debug.Log("Scanning complete. End scanning");
                 _applicationState = ApplicationState.ScanningEnded;
             }
         }
 
         if(_applicationState == ApplicationState.ScanningEnded)
         {
+            Debug.Log("Scanning complete. Start placement");
             cursor.SetActive(true);
             _applicationState = ApplicationState.Placement;
         }
