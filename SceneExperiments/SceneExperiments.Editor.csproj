@@ -277,9 +277,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/serge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/serge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -294,6 +291,9 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/serge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +316,8 @@
     <Compile Include="Assets\HoloToolkit\BuildAndDeploy\Editor\XdeGuestLocator.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\EditorHandsMaterialInspector.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\KeywordAndKeyCodeDrawer.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\MixedRealityCameraManagerEditor.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\MixedRealityTeleportEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\SpeechInputHandlerEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\SpeechInputSourceEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Editor\XboxControllerInputSourceEditor.cs" />
@@ -323,18 +325,21 @@
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Editor\SharingStageEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\Editor\RoomMeshExporter.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\Editor\SurfaceMeshesToPlanesEditor.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\AudioEventBankEditor.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\AudioEventPropertyDrawer.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerBaseEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerEditor.cs" />
-    <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioMiniManagerEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioProfiler.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Editor\SceneLauncherEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\AutoConfigureMenu.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\AutoConfigureWindow.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\CanvasEditorExtension.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\CapabilitySettingsWindow.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\CustomHeaderDrawer.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EditorGUIExtensions.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EditorGUILayoutExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EditorPrefs.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EditorPrefsUtility.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EnforceEditorSettings.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\EnumFlagsPropertyDrawer.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\ExternalProcess.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\HeadsetAdjustmentEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\Int3Drawer.cs" />
@@ -343,6 +348,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\OpenLocalFolderEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\ProjectSettingsWindow.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\SaveLocalFileEditor.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\SceneLauncherEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\SceneSettingsWindow.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\SetIconsWindow.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Editor\TextureScale.cs" />
@@ -352,13 +358,14 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Editor\FastConfigurable2SidedGUI.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Editor\FastConfigurableGUI.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Editor\ShaderGUIUtils.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\Collections\Editor\CollectionEditor.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\Editor\CompoundButtonSaveInterceptor.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Editor\KeyboardInputFieldEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\EditorHands.shader" />
-    <None Include="Assets\HoloToolkit\Input\Shaders\SpecularHighlight.shader" />
     <None Include="Assets\HoloToolkit\License.txt" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Occlusion.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\SpatialMappingTap.shader" />
@@ -367,6 +374,17 @@
     <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialUnderstandingSurface.shader" />
     <None Include="Assets\HoloToolkit\UX\Fonts\LICENSE.txt" />
     <None Include="Assets\HoloToolkit\UX\Shaders\3DTextShader.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\Alpha-Diffuse.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\DebugNormals.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonHighlightShader.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\HUXButtonShader.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\InvisibleShader.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\LuminousUnity.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\MovieMask.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\Normal-Diffuse.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\Occlusion.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\StereoImage.shader" />
+    <None Include="Assets\HoloToolkit\UX\Shaders\unlit_vert_color.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable2Sided.shader" />
